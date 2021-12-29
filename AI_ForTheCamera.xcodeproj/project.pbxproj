@@ -13,6 +13,7 @@
 		4DECEF2E277CA88C007573E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DECEF2C277CA88C007573E4 /* Main.storyboard */; };
 		4DECEF30277CA88D007573E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DECEF2F277CA88D007573E4 /* Assets.xcassets */; };
 		4DECEF33277CA88D007573E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DECEF31277CA88D007573E4 /* LaunchScreen.storyboard */; };
+		4DECEF3D277CBA7F007573E4 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4DECEF3C277CBA7F007573E4 /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4DECEF2F277CA88D007573E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DECEF32277CA88D007573E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DECEF34277CA88D007573E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DECEF3C277CBA7F007573E4 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				4DECEF26277CA88C007573E4 /* AppDelegate.swift */,
 				4DECEF28277CA88C007573E4 /* SceneDelegate.swift */,
 				4DECEF2A277CA88C007573E4 /* ViewController.swift */,
+				4DECEF3C277CBA7F007573E4 /* Resnet50.mlmodel */,
 				4DECEF2C277CA88C007573E4 /* Main.storyboard */,
 				4DECEF2F277CA88D007573E4 /* Assets.xcassets */,
 				4DECEF31277CA88D007573E4 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DECEF3D277CBA7F007573E4 /* Resnet50.mlmodel in Sources */,
 				4DECEF2B277CA88C007573E4 /* ViewController.swift in Sources */,
 				4DECEF27277CA88C007573E4 /* AppDelegate.swift in Sources */,
 				4DECEF29277CA88C007573E4 /* SceneDelegate.swift in Sources */,
@@ -288,6 +292,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				COREML_CODEGEN_LANGUAGE = Swift;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CBX8D35H8U;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -316,6 +321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				COREML_CODEGEN_LANGUAGE = Swift;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CBX8D35H8U;
 				GENERATE_INFOPLIST_FILE = YES;
