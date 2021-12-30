@@ -11,6 +11,15 @@ import Vision //Api для опознания объекта
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
+    //label для текста
+    let identifierLabel: UILabel = {
+        let labelText = UILabel()
+        labelText.backgroundColor = .white
+        labelText.textAlignment = .center
+        labelText.translatesAutoresizingMaskIntoConstraints = false
+        return labelText
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +41,17 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         //Отслеживание
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "VideoQueue"))
         captureSession.addOutput(dataOutput)
+        
+        setupIdentifierConfidenceLabel() //функция ниже
+    }
+    
+    //настройка label для текста
+    fileprivate func setupIdentifierConfidenceLabel() {
+        view.addSubview(identifierLabel)
+        identifierLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32).isActive = true
+        identifierLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        identifierLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        identifierLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     //Функция делегата (Вызывается при кажом кадре схемки)
@@ -48,6 +68,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             guard let results = finishReq.results as? [VNClassificationObservation] else {return}
             guard let firstObservation = results.first else {return}
             print(firstObservation.identifier, firstObservation.confidence)
+        
+            //Отображение на экране объекта
+            DispatchQueue.main.async {
+                self.identifierLabel.text = "\(firstObservation.identifier)"
+            }
         }
         
         //Обработчик запроса, с помощью него и определяем оъект ([:] - пустой словарь)
